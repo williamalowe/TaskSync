@@ -1,9 +1,16 @@
 .workspace {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(45deg, #5D0E41, #FF204E, #003e4d, #A0153E);
   background-size: 400% 400%;
   animation: gradient 30s infinite alternate;
+}
+.panel {
+  background: rgb(31, 31, 31, 0.8);
+  flex: 1;
+  margin: 1rem;
 }
 
 @keyframes gradient {

@@ -5,6 +5,9 @@ const Workspace = () => {
   return (
     <main className={styles.workspace}>
       <HeaderBar />
+      <section className={styles.panel}>
+        {/* Content here */}
+      </section>
     </main>
   )
 }
