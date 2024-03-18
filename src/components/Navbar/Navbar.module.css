@@ -23,3 +23,22 @@
 .left>a:hover, .right>a:hover {
   color: #FF204E;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .right>span {
+    display: none;
+  }
+  .right>a {
+    font-size: 0.8rem;
+  }
+}
