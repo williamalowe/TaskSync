@@ -1,0 +1,67 @@
+.error {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #1f1f1f;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.content>h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.title {
+  font-weight: 600;
+  background: linear-gradient(45deg, #5D0E41, #FF204E, #003e4d, #A0153E);
+  background-size: 400% 400%;
+  color: transparent;
+  background-clip:text;
+  animation: gradient 10s infinite alternate;
+}
+.content>h3 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.content>h3>a {
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(45deg, #FF204E, #5D0E41, #A0153E, #003e4d);
+  background-size: 400% 400%;
+  color: transparent;
+  background-clip:text;
+  transition: color 0.3s ease-in-out;
+  animation: gradient 10s infinite alternate;
+}
+.content>h3>a:hover {
+  color: #FF204E;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .content {
+    align-items: center;
+  }
+  .content>h1 {
+    text-align: center;
+    font-size: 2.4rem;
+  }
+  .content>h3 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}

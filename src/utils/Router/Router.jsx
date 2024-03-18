@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Welcome from "../../views/Welcome/Welcome";
 import Workspace from "../../views/Workspace/Workspace";
-
+import Error from "../../views/Error/Error";
 
 const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Welcome />,
-      errorElement: <>ERROR</>
+      errorElement: <Error />
     },
     {
       path: "/workspace",
