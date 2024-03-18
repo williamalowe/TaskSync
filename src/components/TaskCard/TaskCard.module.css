@@ -49,3 +49,9 @@
 .lower>button:hover {
   transform: translate(0px, -4px);
 }
+@media only screen and (max-width: 600px) {
+  .card {
+    min-width: 160px;
+    max-width: 200px;
+  }
+}
