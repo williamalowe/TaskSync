@@ -16,3 +16,13 @@
 .right {
   justify-content: right;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .right {
+    display: none;
+  }
+  .left {
+    justify-content: center;
+  }
+}
