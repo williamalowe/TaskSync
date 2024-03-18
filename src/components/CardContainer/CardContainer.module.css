@@ -14,3 +14,14 @@
 .cards {
   flex: 1;
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: grid;
+  }
+  .container>h3 {
+    text-align: left;
+    text-decoration: underline;
+    font-size: 0.8rem;
+  }
+}
