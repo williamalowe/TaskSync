@@ -3,6 +3,7 @@ import styles from './Workspace.module.css';
 import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
 import CardContainer from '../../components/CardContainer/CardContainer';
+import NewTaskModal from '../../components/NewTaskModal/NewTaskModal';
 
 const Workspace = () => {
   // test data
@@ -132,6 +133,7 @@ const Workspace = () => {
             />
           </div>
         </section>
+        <NewTaskModal />
       </main>
   )
 }

@@ -1,0 +1,78 @@
+.modal {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  /* background: transparent; */
+}
+.content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+.content>h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FF204E;
+}
+.form {
+  display: flex;
+  gap: 10px;
+}
+.left, .right {
+  flex: 1;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.textInput {
+  font-family: "Inria Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #FF204E;
+}
+.formItem>label, .formItem>input {
+  font-size: 1rem;
+}
+.radioHeader {
+  font-weight: 600;
+}
+.radio {
+  accent-color: #FF204E;
+}
+.formItem>textarea {
+  border: 1px solid #FF204E;
+  font-family: "Inria Sans", sans-serif;
+}
+.right>button {
+  font-size: 1rem;
+  padding: 0.25rem;
+  font-family: "Inria Sans", sans-serif;
+  background: #FF204E;
+  border: 2px solid #1f1f1f;
+  box-shadow: 4px 4px #1f1f1f;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0.25rem;
+}
+.right>button:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    flex-direction: column;
+  }
+  .formItem>textarea {
+    width: 100%;
+  }
+}
