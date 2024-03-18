@@ -13,7 +13,7 @@ const Navbar = () => {
         <NavLink>Backlog</NavLink>
         <NavLink>In Progress</NavLink>
         <NavLink>Under Review</NavLink>
-        <NavLink>Completed</NavLink> | 
+        <NavLink>Completed</NavLink> <span>|</span>
         <NavLink>Add Task</NavLink>
       </div>
     </nav>
