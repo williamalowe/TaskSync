@@ -1,0 +1,51 @@
+.card {
+  border: 2px solid #FF204E;
+  background: #fff;
+  color: #1f1f1f;
+  min-height: 100px;
+  max-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 2px;
+}
+.upper {
+  color: #1f1f1f;
+  flex: 1;
+  font-size: 1.2rem;
+}
+.middle {
+  color: #1f1f1f;
+  flex: 2;
+  font-size: 0.8rem;
+  overflow: scroll;
+}
+.middle::-webkit-scrollbar {
+  display: none;
+}
+.lower {
+  color: #1f1f1f;
+  flex: 1;
+  display: flex;
+  gap: 4px;
+}
+.priority {
+  color: #1f1f1f;
+  font-size: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.lower>button {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 600;
+  color: #FF204E;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.lower>button:hover {
+  transform: translate(0px, -4px);
+}
