@@ -35,6 +35,9 @@
 
 /* Mobile View */
 @media only screen and (max-width: 600px) {
+  .workspace {
+    height: 100%;
+  }
   .cardContainers {
     flex-direction: column;
   }

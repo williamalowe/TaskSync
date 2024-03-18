@@ -31,4 +31,7 @@
     text-decoration: underline;
     font-size: 0.8rem;
   }
+  .cards {
+    display: flex;
+  }
 }
