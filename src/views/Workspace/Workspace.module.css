@@ -1,6 +1,6 @@
 .workspace {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(45deg, #5D0E41, #FF204E, #003e4d, #A0153E);
