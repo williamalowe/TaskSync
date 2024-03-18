@@ -1,6 +1,6 @@
 import styles from './TaskCard.module.css';
 
-const TaskCard = ({ taskTitle, taskDesc, taskPriority }) => {
+const TaskCard = ({ taskTitle, taskDesc, taskPriority, taskStatus }) => {
   return (
     <div className={styles.card}>
       <div className={styles.upper}>
@@ -11,7 +11,10 @@ const TaskCard = ({ taskTitle, taskDesc, taskPriority }) => {
       </div>
       <div className={styles.lower}>
         <div className={styles.priority}>Priority: {taskPriority}</div>
-        <button>Push</button>
+        {
+          taskStatus !== "completed" ? <button>Push</button> : <button>Remove</button>
+
+        }
       </div>
     </div>
   )

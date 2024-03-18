@@ -3,8 +3,6 @@ import styles from './CardContainer.module.css';
 
 const CardContainer = ({ title, taskData }) => {
 
-  console.log(taskData)
-
   return (
     <section className={styles.container}>
       <h3>{title}</h3>
@@ -16,6 +14,7 @@ const CardContainer = ({ title, taskData }) => {
               taskTitle={task.task}
               taskDesc={task.description}
               taskPriority={task.priority}
+              taskStatus={task.status}
             />
           )
         }
