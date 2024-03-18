@@ -1,0 +1,19 @@
+.workspace {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #5D0E41, #FF204E, #003e4d, #A0153E);
+  background-size: 400% 400%;
+  animation: gradient 30s infinite alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
