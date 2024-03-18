@@ -7,7 +7,7 @@ const Error = () => {
   return (
     <main className={styles.error}>
       <div className={styles.content}>
-        <h1><span className={styles.title}>Oops!</span>. Something&apos;s gone wrong.</h1>
+        <h1><span className={styles.title}>Oops!</span> Something&apos;s gone wrong.</h1>
         <h3>
           Click 
           <NavLink to="/workspace"> here </NavLink>
