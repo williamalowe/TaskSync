@@ -8,7 +8,7 @@ function Welcome() {
         <h1>Welcome to <span className={styles.title}>TaskSync</span>.</h1>
         <h3>
           Click 
-          <NavLink> here </NavLink>
+          <NavLink to="/workspace"> here </NavLink>
           to start working.
         </h3>
       </div>
