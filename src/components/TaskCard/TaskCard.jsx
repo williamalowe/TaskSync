@@ -1,16 +1,16 @@
 import styles from './TaskCard.module.css';
 
-const TaskCard = () => {
+const TaskCard = ({ taskTitle, taskDesc, taskPriority }) => {
   return (
     <div className={styles.card}>
       <div className={styles.upper}>
-        Task Example Title
+        {taskTitle}
       </div>
       <div className={styles.middle}>
-      Task Example Description Task Example Description Task Example Description Task Example Description Task Example Description Task Example Description Task Example Description Task Example Description
+        {taskDesc}
       </div>
       <div className={styles.lower}>
-        <div className={styles.priority}>Priority: Medium</div>
+        <div className={styles.priority}>Priority: {taskPriority}</div>
         <button>Push</button>
       </div>
     </div>
