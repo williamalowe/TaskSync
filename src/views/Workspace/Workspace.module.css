@@ -12,6 +12,13 @@
   flex: 1;
   margin: 1rem;
 }
+.cardContainers {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  height: 80%;
+}
+
 
 @keyframes gradient {
   0% {
@@ -22,5 +29,12 @@
   }
   100% {
     background-position: 0 50%;
+  }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .cardContainers {
+    flex-direction: column;
   }
 }
