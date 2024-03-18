@@ -23,10 +23,18 @@
   color: #fff;
 
 }
-.left>a:hover, .right>a:hover {
+.left>a:hover, .right>a:hover, .right>button:hover {
   color: #FF204E;
 }
-
+.right>button {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: #fff;
+  font-family: "Inria Sans", sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
 /* Mobile View */
 @media only screen and (max-width: 600px) {
   .nav {

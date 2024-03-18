@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({ handleOpenModal }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
@@ -14,7 +14,7 @@ const Navbar = () => {
         <NavLink>In Progress</NavLink>
         <NavLink>Under Review</NavLink>
         <NavLink>Completed</NavLink> <span>|</span>
-        <NavLink>Add Task</NavLink>
+        <button onClick={handleOpenModal}>Add Task</button>
       </div>
     </nav>
   )

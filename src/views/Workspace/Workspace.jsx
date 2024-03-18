@@ -79,6 +79,7 @@ const Workspace = () => {
       "status": "completed"
     }
   ]);
+  const [toggleModal, setToggleModal] = useState(false);
 
   const updateTaskStatus = (id) => {
     // assign temp updated val
@@ -107,9 +108,10 @@ const Workspace = () => {
 
   return (
       <main className={styles.workspace}>
-        <HeaderBar />
         <section className={styles.panel}>
-          <Navbar />
+          <Navbar 
+            handleOpenModal={() => setToggleModal(!toggleModal)}
+          />
           <div className={styles.cardContainers}>
             <CardContainer 
               title="Backlog"
@@ -133,7 +135,9 @@ const Workspace = () => {
             />
           </div>
         </section>
-        <NewTaskModal />
+        {
+          toggleModal && <NewTaskModal handleClose={() => setToggleModal(!toggleModal)}/>
+        }
       </main>
   )
 }
