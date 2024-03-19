@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4, validate } from 'uuid';
 import styles from './Workspace.module.css';
 import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
@@ -81,6 +81,7 @@ const Workspace = () => {
     }
   ]);
   const [toggleModal, setToggleModal] = useState(false);
+  const [toggleCardContainers, setToggleCardContainers] = useState(0);
 
   const updateTaskStatus = (id) => {
     // assign temp updated val
@@ -130,7 +131,24 @@ const Workspace = () => {
     } else {
       newTask.status = "backlog";
     }
-    setTaskData(taskData => [...taskData, newTask]);
+    if (validateData(newTask)) {
+      setTaskData(taskData => [...taskData, newTask]);
+      setToggleModal(!toggleModal);
+    } else {
+      alert("Please ensure all fields are filled in.")
+    }
+  }
+
+  const validateData = (data) => {
+    if (data.task === "" || data.description === "") {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const filterCards = (val) => {
+    setToggleCardContainers(val)
   }
 
 
@@ -139,29 +157,69 @@ const Workspace = () => {
         <section className={styles.panel}>
           <Navbar 
             handleOpenModal={() => setToggleModal(!toggleModal)}
+            handleToggleCards={filterCards}
           />
-          <div className={styles.cardContainers}>
-            <CardContainer 
-              title="Backlog"
-              taskData={taskData.filter((item) => item.status === "backlog")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="In Progress"
-              taskData={taskData.filter((item) => item.status === "inProgress")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="Under Review"
-              taskData={taskData.filter((item) => item.status === "underReview")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="Completed"
-              taskData={taskData.filter((item) => item.status === "completed")}
-              handleClick={updateTaskStatus}
-            />
-          </div>
+          {
+            toggleCardContainers === 0 ? 
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="Backlog"
+                  taskData={taskData.filter((item) => item.status === "backlog")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="In Progress"
+                  taskData={taskData.filter((item) => item.status === "inProgress")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="Under Review"
+                  taskData={taskData.filter((item) => item.status === "underReview")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="Completed"
+                  taskData={taskData.filter((item) => item.status === "completed")}
+                  handleClick={updateTaskStatus}
+                />
+              </div>
+              : toggleCardContainers === 1 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Backlog"
+                    taskData={taskData.filter((item) => item.status === "backlog")}
+                    handleClick={updateTaskStatus}
+                    type="singular"
+                  />
+                </div>
+              : toggleCardContainers === 2 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="In Progress"
+                    taskData={taskData.filter((item) => item.status === "inProgress")}
+                    handleClick={updateTaskStatus}
+                    type="singular"
+                  />
+                </div>
+              : toggleCardContainers === 3 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Under Review"
+                    taskData={taskData.filter((item) => item.status === "underReview")}
+                    handleClick={updateTaskStatus}
+                    type="singular"
+                  />
+                </div>
+              : toggleCardContainers === 4 &&
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Completed"
+                    taskData={taskData.filter((item) => item.status === "completed")}
+                    handleClick={updateTaskStatus}
+                    type="singular"
+                  />
+                </div>
+          }
         </section>
         {
           toggleModal && <NewTaskModal 
