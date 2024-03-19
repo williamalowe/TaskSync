@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4, validate } from 'uuid';
 import styles from './Workspace.module.css';
 import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
@@ -130,8 +130,21 @@ const Workspace = () => {
     } else {
       newTask.status = "backlog";
     }
-    setTaskData(taskData => [...taskData, newTask]);
+    if (validateData(newTask)) {
+      setTaskData(taskData => [...taskData, newTask]);
+      setToggleModal(!toggleModal);
+    } else {
+      alert("Please ensure all fields are filled in.")
+    }
   }
+
+  const validateData = (data) => {
+    if (data.task === "" || data.description === "") {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
 
   return (
