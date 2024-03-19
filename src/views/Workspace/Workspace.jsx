@@ -81,6 +81,7 @@ const Workspace = () => {
     }
   ]);
   const [toggleModal, setToggleModal] = useState(false);
+  const [toggleCardContainers, setToggleCardContainers] = useState(0);
 
   const updateTaskStatus = (id) => {
     // assign temp updated val
@@ -146,35 +147,75 @@ const Workspace = () => {
     }
   };
 
+  const filterCards = (val) => {
+    setToggleCardContainers(val)
+  }
+
 
   return (
       <main className={styles.workspace}>
         <section className={styles.panel}>
           <Navbar 
             handleOpenModal={() => setToggleModal(!toggleModal)}
+            handleToggleCards={filterCards}
           />
-          <div className={styles.cardContainers}>
-            <CardContainer 
-              title="Backlog"
-              taskData={taskData.filter((item) => item.status === "backlog")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="In Progress"
-              taskData={taskData.filter((item) => item.status === "inProgress")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="Under Review"
-              taskData={taskData.filter((item) => item.status === "underReview")}
-              handleClick={updateTaskStatus}
-            />
-            <CardContainer 
-              title="Completed"
-              taskData={taskData.filter((item) => item.status === "completed")}
-              handleClick={updateTaskStatus}
-            />
-          </div>
+          {
+            toggleCardContainers === 0 ? 
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="Backlog"
+                  taskData={taskData.filter((item) => item.status === "backlog")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="In Progress"
+                  taskData={taskData.filter((item) => item.status === "inProgress")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="Under Review"
+                  taskData={taskData.filter((item) => item.status === "underReview")}
+                  handleClick={updateTaskStatus}
+                />
+                <CardContainer 
+                  title="Completed"
+                  taskData={taskData.filter((item) => item.status === "completed")}
+                  handleClick={updateTaskStatus}
+                />
+              </div>
+              : toggleCardContainers === 1 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Backlog"
+                    taskData={taskData.filter((item) => item.status === "backlog")}
+                    handleClick={updateTaskStatus}
+                  />
+                </div>
+              : toggleCardContainers === 2 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="In Progress"
+                    taskData={taskData.filter((item) => item.status === "inProgress")}
+                    handleClick={updateTaskStatus}
+                  />
+                </div>
+              : toggleCardContainers === 3 ?
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Under Review"
+                    taskData={taskData.filter((item) => item.status === "underReview")}
+                    handleClick={updateTaskStatus}
+                  />
+                </div>
+              : toggleCardContainers === 4 &&
+                <div className={styles.cardContainers}>
+                  <CardContainer 
+                    title="Completed"
+                    taskData={taskData.filter((item) => item.status === "completed")}
+                    handleClick={updateTaskStatus}
+                  />
+                </div>
+          }
         </section>
         {
           toggleModal && <NewTaskModal 
