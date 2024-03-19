@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Workspace.module.css';
 import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
@@ -105,6 +106,33 @@ const Workspace = () => {
       setTaskData([...updatedList]);
     }
   };
+  const addNewTask = (e) => {
+    e.preventDefault();
+    let newTask = [];
+    newTask.id = uuidv4();
+    newTask.task = document.getElementById("taskNameInput").value;
+    newTask.description = document.getElementById("taskDescriptionInput").value;
+    // priority
+    if (document.getElementById('medium-priority').checked) {
+      newTask.priority = "Medium";
+    } else if (document.getElementById('high-priority').checked) {
+      newTask.priority = "High";
+    } else {
+      newTask.priority = "Low";
+    }
+    // status
+    if (document.getElementById('inProgress-status').checked) {
+      newTask.status = "inProgress";
+    } else if (document.getElementById('underReview-status').checked) {
+      newTask.status = "underReview";
+    } else if (document.getElementById('completed-status').checked) {
+      newTask.status = "completed";
+    } else {
+      newTask.status = "backlog";
+    }
+    setTaskData(taskData => [...taskData, newTask]);
+  }
+
 
   return (
       <main className={styles.workspace}>
@@ -136,7 +164,10 @@ const Workspace = () => {
           </div>
         </section>
         {
-          toggleModal && <NewTaskModal handleClose={() => setToggleModal(!toggleModal)}/>
+          toggleModal && <NewTaskModal 
+            handleClose={() => setToggleModal(!toggleModal)}
+            handleSubmit={addNewTask}
+          />
         }
       </main>
   )
