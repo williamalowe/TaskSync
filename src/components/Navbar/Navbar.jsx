@@ -1,11 +1,11 @@
 import styles from './Navbar.module.css';
 
-const Navbar = ({ handleOpenModal, handleToggleCards }) => {
+const Navbar = ({ handleOpenModal, handleToggleCards, handleToggleView }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
-        <button to="./">Tasks</button> &gt;
-        <button to="./dashboard">Dashboard</button>
+        <button onClick={() => handleToggleView(true)}>Tasks</button> &gt;
+        <button onClick={() => handleToggleView(false)}>Dashboard</button>
       </div>
       <div className={styles.right}>
         <button onClick={() => handleToggleCards(0)}>All</button>

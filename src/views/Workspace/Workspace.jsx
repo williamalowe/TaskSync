@@ -5,6 +5,7 @@ import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
 import CardContainer from '../../components/CardContainer/CardContainer';
 import NewTaskModal from '../../components/NewTaskModal/NewTaskModal';
+import Dashboard from '../../components/Dashboard/Dashboard';
 
 const Workspace = () => {
   // test data
@@ -82,6 +83,7 @@ const Workspace = () => {
   ]);
   const [toggleModal, setToggleModal] = useState(false);
   const [toggleCardContainers, setToggleCardContainers] = useState(0);
+  const [toggleMainView, setToggleMainView] = useState(true);
 
   const updateTaskStatus = (id) => {
     // assign temp updated val
@@ -159,8 +161,77 @@ const Workspace = () => {
           <Navbar 
             handleOpenModal={() => setToggleModal(!toggleModal)}
             handleToggleCards={filterCards}
+            handleToggleView={setToggleMainView}
           />
           {
+            toggleMainView ? toggleCardContainers === 0 ? 
+            <div className={styles.cardContainers}>
+              <CardContainer 
+                title="Backlog"
+                taskData={taskData.filter((item) => item.status === "backlog")}
+                handleClick={updateTaskStatus}
+              />
+              <CardContainer 
+                title="In Progress"
+                taskData={taskData.filter((item) => item.status === "inProgress")}
+                handleClick={updateTaskStatus}
+              />
+              <CardContainer 
+                title="Under Review"
+                taskData={taskData.filter((item) => item.status === "underReview")}
+                handleClick={updateTaskStatus}
+              />
+              <CardContainer 
+                title="Completed"
+                taskData={taskData.filter((item) => item.status === "completed")}
+                handleClick={updateTaskStatus}
+              />
+            </div>
+            : toggleCardContainers === 1 ?
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="Backlog"
+                  taskData={taskData.filter((item) => item.status === "backlog")}
+                  handleClick={updateTaskStatus}
+                  type="singular"
+                />
+              </div>
+            : toggleCardContainers === 2 ?
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="In Progress"
+                  taskData={taskData.filter((item) => item.status === "inProgress")}
+                  handleClick={updateTaskStatus}
+                  type="singular"
+                />
+              </div>
+            : toggleCardContainers === 3 ?
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="Under Review"
+                  taskData={taskData.filter((item) => item.status === "underReview")}
+                  handleClick={updateTaskStatus}
+                  type="singular"
+                />
+              </div>
+            : toggleCardContainers === 4 &&
+              <div className={styles.cardContainers}>
+                <CardContainer 
+                  title="Completed"
+                  taskData={taskData.filter((item) => item.status === "completed")}
+                  handleClick={updateTaskStatus}
+                  type="singular"
+                />
+              </div>
+              :
+              <div className={styles.cardContainers}>
+                <Dashboard 
+                  taskData={taskData}
+                />
+              </div>
+          }
+
+          {/* {
             toggleCardContainers === 0 ? 
               <div className={styles.cardContainers}>
                 <CardContainer 
@@ -220,7 +291,12 @@ const Workspace = () => {
                     type="singular"
                   />
                 </div>
-          }
+          } */}
+          {/* <div className={styles.cardContainers}>
+            <Dashboard 
+              taskData={taskData}
+            />
+          </div> */}
         </section>
         {
           toggleModal && <NewTaskModal 
