@@ -96,3 +96,15 @@
   /* background-image: conic-gradient(orange 64%, blue 64%, blue 81%, black 81%); */
   border-radius: 50%
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  .upper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lower {
+    flex-direction: column;
+  }
+
+}
