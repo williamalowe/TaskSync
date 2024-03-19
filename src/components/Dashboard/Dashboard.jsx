@@ -74,7 +74,7 @@ const Dashboard = ({ taskData }) => {
           </div>
           <div className={styles.right}>
             <div className={styles.pie}
-              style={{backgroundImage: `conic-gradient(#ff2020 ${backlogPercent}%, #2024ff ${backlogPercent}%, #2024ff ${backlogPercent + inProgressPercent}%,  #ffc320 ${backlogPercent + inProgressPercent}%, #ffc320 ${backlogPercent + inProgressPercent + underReviewPercent}%, #20ff3e ${backlogPercent + inProgressPercent + underReviewPercent}%)`}}
+              style={{backgroundImage: `conic-gradient(#ff8420 ${backlogPercent}%, #da20ff ${backlogPercent}%, #da20ff ${backlogPercent + inProgressPercent}%,  #2041ff ${backlogPercent + inProgressPercent}%, #2041ff ${backlogPercent + inProgressPercent + underReviewPercent}%, #20ff3e ${backlogPercent + inProgressPercent + underReviewPercent}%)`}}
             >
             </div>
           </div>
