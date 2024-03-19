@@ -8,6 +8,7 @@
   flex-direction: column;
   gap: 4px;
   padding: 2px;
+  transition: transform 0.3s ease-in-out;
 }
 .upper {
   color: #1f1f1f;
@@ -49,6 +50,11 @@
 .lower>button:hover {
   transform: translate(0px, -4px);
 }
+.card:hover {
+
+}
+
+/* mobile view */
 @media only screen and (max-width: 600px) {
   .card {
     min-width: 160px;
