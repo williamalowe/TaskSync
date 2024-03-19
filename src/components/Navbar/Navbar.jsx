@@ -1,19 +1,18 @@
-import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar = ({ handleOpenModal }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
-        <NavLink>Tasks</NavLink> &gt;
-        <NavLink>Dashboard</NavLink>
+        <button to="./">Tasks</button> &gt;
+        <button to="./dashboard">Dashboard</button>
       </div>
       <div className={styles.right}>
-        <NavLink>All</NavLink>
-        <NavLink>Backlog</NavLink>
-        <NavLink>In Progress</NavLink>
-        <NavLink>Under Review</NavLink>
-        <NavLink>Completed</NavLink> <span>|</span>
+        <button>All</button>
+        <button>Backlog</button>
+        <button>In Progress</button>
+        <button>Under Review</button>
+        <button>Completed</button> <span>|</span>
         <button onClick={handleOpenModal}>Add Task</button>
       </div>
     </nav>
