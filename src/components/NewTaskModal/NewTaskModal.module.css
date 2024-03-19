@@ -1,20 +1,20 @@
 .modal {
-  /* display: none; */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  /* background: transparent; */
+  width: 100vw; 
+  height: 100vh;
+  background: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3 ease-in-out
 }
 .content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  background-color: #1f1f1f;
+  margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  border: 1px solid #FF204E;
+  width: 50%;
 }
 .content>h3 {
   font-size: 1.8rem;
@@ -41,6 +41,8 @@
 }
 .formItem>label, .formItem>input {
   font-size: 1rem;
+  color: #fff;
+  background: transparent;
 }
 .radioHeader {
   font-weight: 600;
@@ -58,7 +60,7 @@
   font-family: "Inria Sans", sans-serif;
   background: #FF204E;
   border: 2px solid #1f1f1f;
-  box-shadow: 4px 4px #1f1f1f;
+  box-shadow: 4px 4px #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   margin: 0.25rem;
@@ -67,12 +69,17 @@
   transform: translate(4px, 4px);
   box-shadow: 0 0;
 }
-
+.left>.formItem {
+  margin-top: 0.5rem;
+}
 @media only screen and (max-width: 600px) {
   .form {
     flex-direction: column;
   }
   .formItem>textarea {
     width: 100%;
+  }
+  .textInput {
+    width: 80%;
   }
 }
