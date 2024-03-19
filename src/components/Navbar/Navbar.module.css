@@ -23,7 +23,7 @@
   color: #fff;
 
 }
-.left>a:hover, .right>a:hover, .right>button:hover {
+.left>button:hover, .right>button:hover {
   color: #FF204E;
 }
 .left>button, .right>button {

@@ -36,6 +36,7 @@
 /* Mobile View */
 @media only screen and (max-width: 600px) {
   .workspace {
+    min-height: 100vh;
     height: 100%;
   }
   .cardContainers {
