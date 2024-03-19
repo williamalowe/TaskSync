@@ -189,6 +189,7 @@ const Workspace = () => {
                     title="Backlog"
                     taskData={taskData.filter((item) => item.status === "backlog")}
                     handleClick={updateTaskStatus}
+                    type="singular"
                   />
                 </div>
               : toggleCardContainers === 2 ?
@@ -197,6 +198,7 @@ const Workspace = () => {
                     title="In Progress"
                     taskData={taskData.filter((item) => item.status === "inProgress")}
                     handleClick={updateTaskStatus}
+                    type="singular"
                   />
                 </div>
               : toggleCardContainers === 3 ?
@@ -205,6 +207,7 @@ const Workspace = () => {
                     title="Under Review"
                     taskData={taskData.filter((item) => item.status === "underReview")}
                     handleClick={updateTaskStatus}
+                    type="singular"
                   />
                 </div>
               : toggleCardContainers === 4 &&
@@ -213,6 +216,7 @@ const Workspace = () => {
                     title="Completed"
                     taskData={taskData.filter((item) => item.status === "completed")}
                     handleClick={updateTaskStatus}
+                    type="singular"
                   />
                 </div>
           }
