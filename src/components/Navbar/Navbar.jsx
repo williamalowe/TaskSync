@@ -4,7 +4,7 @@ const Navbar = ({ handleOpenModal, handleToggleCards, handleToggleView }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
-        <button onClick={() => handleToggleView(true)}>Tasks</button> &gt;
+        <button onClick={() => handleToggleCards(0)}>Tasks</button> &gt;
         <button onClick={() => handleToggleView(false)}>Dashboard</button>
       </div>
       <div className={styles.right}>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { v4 as uuidv4, validate } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Workspace.module.css';
 import HeaderBar from '../../components/Headerbar/HeaderBar';
 import Navbar from '../../components/Navbar/Navbar';
@@ -151,8 +151,8 @@ const Workspace = () => {
 
   const filterCards = (val) => {
     setToggleCardContainers(val)
+    setToggleMainView(true);
   }
-
 
   return (
       <main className={styles.workspace}>
