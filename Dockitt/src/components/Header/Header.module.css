@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+}
+.left {
+
+}
+.left>h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--highlight-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.right>h5 {
+  transition: color 0.3s ease-in-out;
+}
+.right>h5:hover {
+  color: var(--highlight-color);
+  cursor: pointer;
+}
