@@ -4,3 +4,6 @@
   padding: 1rem 2rem;
   background: var(--background-color);
 }
+.content {
+  padding: 1rem;
+}

@@ -6,7 +6,11 @@ const Router = () => {
     {
       path: '/',
       element: <App />,
-      errorElement: <>Error</>
+      errorElement: <>Error</>,
+      children: [
+        {path: "tasklist", element: <>TaskList</>},
+        {path: "dashboard", element: <>Dashboard</>}
+      ]
     },
     {
       // 
