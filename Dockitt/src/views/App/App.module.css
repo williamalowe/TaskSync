@@ -1,9 +1,11 @@
 .app {
-  width: calc(100vw - 4rem);
-  height: calc(100vh - 2rem);
+  min-width: calc(100vw - 4rem);
+  min-height: calc(100vh - 2rem);
   padding: 1rem 2rem;
   background: var(--background-color);
+  display: flex;
+  flex-direction: column;
 }
 .content {
-  padding: 1rem;
+  flex: 1;
 }
