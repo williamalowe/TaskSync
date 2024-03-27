@@ -5,8 +5,8 @@ import Navbar from '../../components/Navbar/Navbar';
 import styles from './App.module.css';
 
 export const TaskContext = createContext({
-  // tasks: [],
-  // addTask: () => {},
+  tasks: [],
+  addTask: () => {},
 });
 
 const App = () => {
