@@ -49,7 +49,7 @@ const TaskDisplay = () => {
       "Date": "1636243200",
       "Description": "Add unit tests to ensure the stability and correctness of the codebase",
       "Priority": "medium",
-      "Status": "backlog"
+      "Status": "completed"
     },
     {
       "Task": "Improve accessibility",
@@ -63,14 +63,14 @@ const TaskDisplay = () => {
       "Date": "1636416000",
       "Description": "There are several broken links on the website, need to find and fix them",
       "Priority": "medium",
-      "Status": "backlog"
+      "Status": "completed"
     },
     {
       "Task": "Update documentation",
       "Date": "1636502400",
       "Description": "The project documentation is outdated, need to review and update it",
       "Priority": "low",
-      "Status": "backlog"
+      "Status": "cancelled"
     }
   ]
 
@@ -84,17 +84,18 @@ const TaskDisplay = () => {
           <th>Status</th>
           <th>Priority</th>
         </tr>
-        {
-          testData.map((task) => 
-            <tr className={styles.task} key={task.Date}>
-              <td>{task.Date}</td>
-              <td>{task.Task}</td>
-              <td>{task.Description}</td>
-              <td>{task.Status}</td>
-              <td>{task.Priority}</td>
-            </tr>
-          )
-        }
+        {/* output */}
+          {
+            testData.map((task) => 
+              <tbody className={styles.task} key={task.Date}>
+                <td>{task.Date}</td>
+                <td>{task.Task}</td>
+                <td>{task.Description}</td>
+                <td>{task.Status}</td>
+                <td>{task.Priority}</td>
+              </tbody>
+            )
+          }
       </table>
     </div>
   )
