@@ -2,48 +2,31 @@
   margin-top: 1rem;
   border: 1px solid var(--accent-color);
   border-radius: 12px;
-  width: 100%;
 }
 .table {
+  display: flex;
+  flex-direction: column;
   text-align: left;
   padding: 0.5rem;
-  width: 100%;
   font-size: 0.8rem;
 }
-.table>tr, .table>tbody {
+.headers>tr {
   display: flex;
-  padding: 0.5rem;
 }
-.table>tr>th {
+.headers>tr>th {
   flex: 1;
   color: var(--highlight-color);
 }
-.table>tr>th:nth-child(3) {
-  flex: 4;
-}
 .task {
   display: flex;
+  border-top: 1px solid var(--accent-color);
+  align-items: center;
 }
-.task>td {
+.task>th, .task>td {
   flex: 1;
   text-transform: capitalize;
+  padding: 0.5rem;
 }
-.task>td:first-child {
+.task>th {
   font-weight: 600;
-}
-.task>td:nth-child(3) {
-  flex: 4;
-}
-.task {
-  border-top: 1px solid var(--accent-color);
-}
-
-@media screen and (max-width: 768px) {
-  .table>tr {
-    /* flex-direction: column; */
-  }
-  .task {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
 }

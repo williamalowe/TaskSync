@@ -77,25 +77,38 @@ const TaskDisplay = () => {
   return (
     <div className={styles.border}>
       <table className={styles.table}>
-        <tr>
-          <th>Date</th>
-          <th>Task</th>
-          <th>Title</th>
-          <th>Status</th>
-          <th>Priority</th>
-        </tr>
-        {/* output */}
+        <thead className={styles.headers}>
+          <tr>
+            <th>Date</th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody className={styles.body}>
           {
             testData.map((task) => 
-              <tbody className={styles.task} key={task.Date}>
-                <td>{task.Date}</td>
-                <td>{task.Task}</td>
-                <td>{task.Description}</td>
-                <td>{task.Status}</td>
-                <td>{task.Priority}</td>
-              </tbody>
+            <tr 
+              key={task.Date}
+              className={styles.task}
+            >
+              <th>{task.Date}</th>
+              <td>{task.Task}</td>
+              <td>{task.Description}</td>
+              <td>{task.Status}</td>
+              <td>{task.Priority}</td>
+            </tr>
             )
-          }
+          
+          /* <tr>
+            <th>task date</th>
+            <td>task name</td>
+            <td>task description</td>
+            <td>task status</td>
+            <td>task priority</td>
+          </tr> */}
+        </tbody>
       </table>
     </div>
   )
